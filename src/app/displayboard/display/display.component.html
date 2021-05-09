@@ -1,0 +1,69 @@
+<div class="main-background" style="height: 700px;">
+    <div @fadeIn>
+        <div class="row">"
+            <div class="container-fluid">
+                <h5 class="text-warning text-left">Temperature modules</h5>
+                <div class="row">
+                    <div class="col">
+                        <app-temp [temperature] = "tempDataArray[0]" [controllerName] = "tempIDArray[0]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[1]" [controllerName] = "tempIDArray[1]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[2]" [controllerName] = "tempIDArray[2]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[3]" [controllerName] = "tempIDArray[3]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[4]" [controllerName] = "tempIDArray[4]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[5]" [controllerName] = "tempIDArray[5]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp [temperature] = "tempDataArray[6]" [controllerName] = "tempIDArray[6]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[7]" [controllerName] = "tempIDArray[7]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[8]" [controllerName] = "tempIDArray[8]"></app-temp>
+                    </div>
+                    <div class="col">
+                        <app-temp  [temperature] = "tempDataArray[9]" [controllerName] = "tempIDArray[9]"></app-temp>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="row justify-content-center">
+            <img src="assets/images/samplemc.png" alt="samplemc" style="width: 100%; height: auto;">
+        </div>
+        <div class="row">"
+            <div class="container-fluid ">
+                <h5 class="text-warning text-left">VFD modules</h5>
+                <div class="row">
+                    <div class="col">
+                        <app-vfd [invid] = "invIDArray[0]" [speed] = "invDataArray[0]"></app-vfd>
+                    </div>
+                    <div class="col">
+                        <app-vfd [invid] = "invIDArray[1]" [speed] = "invDataArray[1]"></app-vfd>
+                    </div>
+                    <div class="col">
+                        <app-vfd [invid] = "invIDArray[2]" [speed] = "invDataArray[2]"></app-vfd>
+                    </div>
+                    <div class="col">
+                        <app-timvalue [timevalue] = "timevalue"></app-timvalue>
+                    </div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+    <br>
+    <br>
+    <br>
+    <br>
+</div>

@@ -1,0 +1,6 @@
+.card-bg {
+    /* background-color: rgba(5, 196, 230, 0.1); */
+    border: 2px solid rgba(4, 54, 194, 0.5);
+    border-radius: 10px;
+    background: transparent;
+ }

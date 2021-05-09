@@ -1,0 +1,36 @@
+<div id="loading" *ngIf = "initialUpdate === false">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div id="loaded" *ngIf = "initialUpdate === true">
+    <table style="width:100%; color: ivory;">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>INV1</th>
+          <th>INV2</th>
+          <th>INV3</th>
+          <th>Cycle Time</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let element of invElementArray">
+          <td>{{element.date}}</td>
+          <td>{{element.time}}</td>
+          <td>{{element.inv1}}</td>
+          <td>{{element.inv2}}</td>
+          <td>{{element.inv3}}</td>
+          <td>{{element.timevalue}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+  
+  
+
+
+
+

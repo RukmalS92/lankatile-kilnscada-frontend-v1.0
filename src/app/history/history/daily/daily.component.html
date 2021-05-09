@@ -1,0 +1,48 @@
+  <div id="loading" *ngIf = "initialUpdate === false">
+    <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+  </div>
+  <div id="loaded" *ngIf = "initialUpdate === true">
+    <table style="width:100%; color: ivory;">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Time</th>
+          <th>TRC1</th>
+          <th>TRC2</th>
+          <th>TRC3</th>
+          <th>TRC4</th>
+          <th>TRC5</th>
+          <th>TRC6</th>
+          <th>TRC7</th>
+          <th>TRC8</th>
+          <th>TRC9</th>
+          <th>TRC10</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor = "let element of tempElementArray">
+          <td>{{element.date}}</td>
+          <td>{{element.time}}</td>
+          <td>{{element.temp_t1}}</td>
+          <td>{{element.temp_t2}}</td>
+          <td>{{element.temp_t3}}</td>
+          <td>{{element.temp_t4}}</td>
+          <td>{{element.temp_t5}}</td>
+          <td>{{element.temp_t6}}</td>
+          <td>{{element.temp_t7}}</td>
+          <td>{{element.temp_t8}}</td>
+          <td>{{element.temp_t9}}</td>
+          <td>{{element.temp_t10}}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  
+  
+
+  
+  
+
+
+
+

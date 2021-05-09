@@ -1,0 +1,134 @@
+<div class="container-fluid" @fadeIn>
+    <h2 class="text-primary text-center">Temperature Parameters</h2>
+    <form #temperature_settings = "ngForm" (ngSubmit) = "onFormSubmit(temperature_settings)" >
+        <div class="row">
+            <div class="col">
+                <div class="form-group"> 
+                    <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC1</label>
+                    <br>
+                    <label style="color: white;" for="" >Set Value</label>
+                    <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc1_setvalue" name="trc1_setvalue" ngModel #trc1 = 'ngModel'>
+                    <br>
+                    <label style="color: thistle; font-size: large;" for="" id="trc1_presentvalue">Present Value : {{presentValue_trc[0]}}</label>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC2</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc2_setvalue" name="trc2_setvalue" ngModel #trc2 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc2_presentvalue">Present Value : {{presentValue_trc[1]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC3</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc3_setvalue" name="trc3_setvalue" ngModel #trc3 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc3_presentvalue">Present Value : {{presentValue_trc[2]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC4</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc4_setvalue" name="trc4_setvalue" ngModel #trc4 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc4_presentvalue">Present Value : {{presentValue_trc[3]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC5</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc5_setvalue" name="trc5_setvalue" ngModel #trc5 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc5_presentvalue">Present Value : {{presentValue_trc[4]}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC6</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc6_setvalue" name="trc6_setvalue" ngModel #trc6 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc6_presentvalue">Present Value : {{presentValue_trc[5]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC7</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc7_setvalue" name="trc7_setvalue" ngModel #trc7 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc7_presentvalue">Present Value : {{presentValue_trc[6]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC8</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc8_setvalue" name="trc8_setvalue" ngModel #trc8 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc8_presentvalue">Present Value : {{presentValue_trc[7]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC9</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc9_setvalue" name="trc9_setvalue" ngModel #trc9 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc9_presentvalue">Present Value : {{presentValue_trc[8]}}</label>
+                    </div>
+                </div>
+            </div>
+            <div class="col">
+                <div class="form-group"> 
+                    <div class="form-group"> 
+                        <label style="font-weight: bold; font-size: large; color: tomato;" for="">TRC10</label>
+                        <br>
+                        <label style="color: white;" for="" >Set Value</label>
+                        <input style="background: transparent; color: yellow; font-size: x-large;" type="text" class="form-control text-center" id="trc10_setvalue" name="trc10_setvalue" ngModel #trc10 = 'ngModel'>
+                        <br>
+                        <label style="color: thistle; font-size: large;" for="" id="trc10_presentvalue">Present Value : {{presentValue_trc[9]}}</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <button class="btn btn-primary" type="submit" *ngIf = "!trc1.value || !trc2.value || !trc3.value || !trc4.value || !trc5.value || !trc6.value || !trc7.value || !trc8.value || !trc9.value || !trc10.value" [disabled] = "true">Submit</button>
+        <button class="btn btn-primary" type="submit" *ngIf = "trc1.value && trc2.value && trc3.value && trc4.value && trc5.value && trc6.value && trc7.value && trc8.value && trc9.value && trc10.value" [disabled] = "false">Submit</button>
+        <br>
+        <br>
+        <small *ngIf = "responseStatus === ''" style="font-size: medium; color: whitesmoke;"> {{temperatureDataUpdateStatus}} </small>
+        <small *ngIf = "responseStatus === 'success'" style="font-size: medium; color: yellowgreen;"> {{temperatureDataUpdateStatus}} </small>
+        <small *ngIf = "responseStatus === 'fail'" class="text-danger" style="font-size: medium; color: tomato;"> {{temperatureDataUpdateStatus}} </small>
+    </form>
+</div>
