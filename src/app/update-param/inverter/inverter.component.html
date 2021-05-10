@@ -1,9 +1,9 @@
 <div class="container-fluid" style="height: auto;" @fadeIn>
     <h2 class="text-primary text-center">Inverter Parameters</h2>
-    <form #inverter_settings = "ngForm" (ngSubmit) = "onInverterSubmit()" >
+    <form #inverter_settings = "ngForm" (ngSubmit) = "onInv1Inv2CycletimeSubmit()" >
         <div class="row">
             <div class="col">
-                <h3 class="h3 text-warning">Secondary Inverter Set Value</h3>
+                <h3 class="h3 text-warning">CycleTime Inverter 1 Inverter 2 Settings</h3>
             </div>
         </div>
         <div class="row">
@@ -27,9 +27,17 @@
                     <label style="color: thistle; font-size: large;" for="" id="inv2_presentvalue">Present Value : {{inverterValues[1]}}</label>
                 </div>
             </div>
+            <div class="col">
+                <label style="color: tomato; font-size: large; font-weight: bold;" for="">Cycle Time Value</label>
+                <br>
+                <label style="color: white;" for="">Set Value</label>
+                <input style="background: transparent; font-size: x-large; color : yellow;" type="text" class="form-control text-center" id="time_value_set" name="time_value_set" ngModel #tv = "ngModel">
+                <br>
+                <label style="color: thistle; font-size: large;" for="" id="time_value_present">Present Value : {{timeValue}}</label>
+            </div>
         </div>
-        <button class="btn btn-primary" type="submit" *ngIf = "!inv1.value || !inv2.value" [disabled] = "true">Submit</button>
-        <button class="btn btn-primary" type="submit" *ngIf = "inv1.value && inv2.value" [disabled] = "false">Submit</button>
+        <button class="btn btn-primary" type="submit" *ngIf = "!tv.value" [disabled] = "true">Submit</button>
+        <button class="btn btn-primary" type="submit" *ngIf = "tv.value" [disabled] = "false">Submit</button>
         <br>
         <small *ngIf = "responseStatusInverters === ''" style="font-size: medium; color: whitesmoke;"> {{formUpdateStatusDisplayStringInverters}} </small>
         <small *ngIf = "responseStatusInverters === 'success'"style="font-size: medium; color: greenyellow;"> {{formUpdateStatusDisplayStringInverters}} </small>
@@ -37,7 +45,7 @@
     </form>
     <br>
     <br>
-    <form #timevalue_settings = "ngForm" (ngSubmit) = "ontimevalueSubmit()">
+    <form #timevalue_settings = "ngForm" (ngSubmit) = "onInv3Submit()">
         <div class="row">
             <div class="col">
                 <h3 class="h3 text-warning">Main Inverter Set Value and Time value</h3>
@@ -48,22 +56,14 @@
                 <div class="form-group"> 
                     <label style="color: tomato; font-size: large; font-weight: bold;" for="">INV3</label>
                     <br>
-                    <br>
+                    <input style="background: transparent; font-size: x-large; color : yellow;" type="text" class="form-control text-center" id="inv3_setvalue" name="inv3_setvalue" ngModel #inv3 = "ngModel">
                     <br>
                     <label style="color: thistle; font-size: large;" for="" id="inv3_presentvalue">Present Value : {{inverterValues[2]}}</label>
                 </div>
             </div>
             <div class="col">
-                <label style="color: tomato; font-size: large; font-weight: bold;" for="">Cycle Time Value</label>
-                <br>
-                <label style="color: white;" for="">Set Value</label>
-                <input style="background: transparent; font-size: x-large; color : yellow;" type="text" class="form-control text-center" id="time_value_set" name="time_value_set" ngModel #tv = "ngModel">
-                <br>
-                <label style="color: thistle; font-size: large;" for="" id="time_value_present">Present Value : {{timeValue}}</label>
-            </div>
-            <div class="col">
-                <button class="btn btn-primary" type="submit" *ngIf = "!tv.value" [disabled] = "true">Submit</button>
-                <button class="btn btn-primary" type="submit" *ngIf = "tv.value" [disabled] = "false">Submit</button>
+                <button class="btn btn-primary" type="submit" *ngIf = "!inv3.value" [disabled] = "true">Submit</button>
+                <button class="btn btn-primary" type="submit" *ngIf = "inv3.value" [disabled] = "false">Submit</button>
                 <br>
                 <small *ngIf = "responseStatusTimeValue === ''" style="font-size: medium; color: whitesmoke;"> {{formUpdateStatusDisplayStringTimeValue}} </small>
                 <small *ngIf = "responseStatusTimeValue === 'success'" style="font-size: medium; color: greenyellow;">  {{formUpdateStatusDisplayStringTimeValue}}  </small>

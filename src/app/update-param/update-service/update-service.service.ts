@@ -9,8 +9,8 @@ import { ErrorHandlerService } from '../../errorHandler/error-handler.service';
 export class UpdateServiceService {
 
   private updateTemperatureSttings_URL = "http://localhost:3000/tempwr";
-  private updateInverterSettings_URL = "http://localhost:3000/invwr";
-  private updateTimeValueSettings_URL = "http://localhost:3000/timevaluewr";
+  private updateInv1Inv2CycletimeSettings_URL = "http://localhost:3000/cycleinvwr";
+  private updateInv3Settings_URL = "http://localhost:3000/inv3wr";
   private retrieveTemperatureSV_URL = "http://localhost:3000/tempretrieve";
   private retrieveInverterSV_URL = "http://localhost:3000/invretrieve";
 
@@ -26,8 +26,8 @@ export class UpdateServiceService {
     )
   }
 
-  updateInverterSettings = (body) => {
-    return this.httpclient.post(this.updateInverterSettings_URL, body, {responseType : 'json'})
+  updateInv1Inv2CycletimeSettings = (body) => {
+    return this.httpclient.post(this.updateInv1Inv2CycletimeSettings_URL, body, {responseType : 'json'})
     .pipe(
       map(
         (data:any) => data
@@ -36,8 +36,8 @@ export class UpdateServiceService {
     )
   }
 
-  updateTimeValueSettings = (body) => {
-    return this.httpclient.post(this.updateTimeValueSettings_URL, body, {responseType : 'json'})
+  updateInv3Settings = (body) => {
+    return this.httpclient.post(this.updateInv3Settings_URL, body, {responseType : 'json'})
     .pipe(
       map(
         (data:any) => data

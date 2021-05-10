@@ -33,8 +33,8 @@ export class InverterComponent implements OnInit, OnDestroy {
   timevalueDataUpdateSubscription : Subscription = Subscription.EMPTY;
   invSVRetrieveSubscription : Subscription = Subscription.EMPTY;
 
-  @ViewChild('inverter_settings') inverter_settings;
-  @ViewChild('timevalue_settings') timevalue_settings;
+  @ViewChild('inverter_settings') inv1inv2cycletime_settings;
+  @ViewChild('timevalue_settings') inv3_settings;
 
   constructor(private appservice : AppServiceService, private updateservice : UpdateServiceService) { 
       this.invSubjectSubscription = this.appservice.invSubject.subscribe(
@@ -53,31 +53,41 @@ export class InverterComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.invSVRetrieveSubscription = this.updateservice.retrieveInverterSV().subscribe(
       (data:any) => {
-          this.inverter_settings.setValue({
+          this.inv1inv2cycletime_settings.setValue({
               'inv1_setvalue' : data.inv1,
-              'inv2_setvalue' : data.inv2
+              'inv2_setvalue' : data.inv2,
+              'time_value_set' : data.timevalue
           })
 
-          this.timevalue_settings.setValue(
+          this.inv3_settings.setValue(
             {
-              'time_value_set' : data.timevalue
+              'inv3_setvalue' : data.inv3
             }
           )
       }
     )
   }
 
-  onInverterSubmit() {
-    let inverterValues = Object.values(this.inverter_settings.value);
+  onInv1Inv2CycletimeSubmit() {
+    let inverterValues = Object.values(this.inv1inv2cycletime_settings.value);
+  
     let iObject = {
-      inv1 : Number(inverterValues[0]),
-      inv2 : Number(inverterValues[1])
+      timevalue : Number(inverterValues[2])
     }
     this.responseStatusInverters = "";
     this.formUpdateStatusDisplayStringInverters = "Pending...";
-    this.inverterDataUpdateSubscription = this.updateservice.updateInverterSettings(iObject).subscribe(
+    this.inverterDataUpdateSubscription = this.updateservice.updateInv1Inv2CycletimeSettings(iObject).subscribe(
       (response:any) => {
         this.responseStatusInverters = response.status;
+        this.invSVRetrieveSubscription = this.updateservice.retrieveInverterSV().subscribe(
+          (response:any) => {
+            this.inv1inv2cycletime_settings.setValue({
+              'inv1_setvalue' : response.inv1,
+              'inv2_setvalue' : response.inv2,
+              'time_value_set' : response.timevalue
+            })
+          }
+        )
         if(response.status === "success"){
           this.formUpdateStatusDisplayStringInverters = "Update success...";
         }
@@ -88,12 +98,12 @@ export class InverterComponent implements OnInit, OnDestroy {
     )
   }
 
-  ontimevalueSubmit() {
-    let timevalue = this.timevalue_settings.value.time_value_set;
-    let tObject = {timevalue : Number(timevalue)};
+  onInv3Submit() {
+    let inv3value = this.inv3_settings.value.inv3_setvalue;
+    let tObject = {inv3 : Number(inv3value)};
     this.responseStatusTimeValue = "";
     this.formUpdateStatusDisplayStringTimeValue = "Pending...";
-    this.timevalueDataUpdateSubscription = this.updateservice.updateTimeValueSettings(tObject).subscribe(
+    this.timevalueDataUpdateSubscription = this.updateservice.updateInv3Settings(tObject).subscribe(
       (response:any) => {
         this.responseStatusTimeValue = response.status;
         if(response.status === "success"){
