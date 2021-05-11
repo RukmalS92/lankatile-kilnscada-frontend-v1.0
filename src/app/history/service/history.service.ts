@@ -7,7 +7,7 @@ import { ErrorHandlerService } from '../../errorHandler/error-handler.service'
 @Injectable()
 export class HistoryService implements OnDestroy, OnInit {
   //update time interval
-  updateTimeInterval = 2000;
+  updateTimeInterval = 60000;
   //subscrption
   tempHistorySubscription : Subscription = Subscription.EMPTY;
   invHistorySubscription : Subscription = Subscription.EMPTY;

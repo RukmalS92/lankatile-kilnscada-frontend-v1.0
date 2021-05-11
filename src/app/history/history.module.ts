@@ -5,7 +5,6 @@ import { MatProgressBarModule } from '@angular/material/progress-bar';
 import { HistorynavbarComponent } from '../history/historynavbar/historynavbar.component';
 import { HistoryComponent } from './history/history.component';
 import { DailyComponent } from './history/daily/daily.component';
-import { HistoryService } from './service/history.service';
 import { InverterComponent } from './history/inverter/inverter.component';
 
 
@@ -17,6 +16,6 @@ import { InverterComponent } from './history/inverter/inverter.component';
     MatProgressBarModule
   ],
   exports :  [HistorynavbarComponent,DailyComponent,HistoryComponent],
-  providers: [HistoryService]
+  providers: []
 })
 export class HistoryModule { }

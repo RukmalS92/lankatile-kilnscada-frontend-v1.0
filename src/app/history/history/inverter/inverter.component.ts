@@ -5,7 +5,8 @@ import { HistoryService } from '../../service/history.service';
 @Component({
   selector: 'app-inverter',
   templateUrl: './inverter.component.html',
-  styleUrls: ['./inverter.component.css']
+  styleUrls: ['./inverter.component.css'],
+  providers : [HistoryService]
 })
 export class InverterComponent implements OnInit, OnDestroy {
   initialUpdate : Boolean = false;

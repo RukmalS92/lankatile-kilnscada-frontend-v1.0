@@ -22,7 +22,8 @@ export interface PeriodicElement {
 @Component({
   selector: 'app-daily',
   templateUrl: './daily.component.html',
-  styleUrls: ['./daily.component.css']
+  styleUrls: ['./daily.component.css'],
+  providers : [HistoryService]
 })
 
 export class DailyComponent implements OnInit, OnDestroy {
